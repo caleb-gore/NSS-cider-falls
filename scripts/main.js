@@ -1,5 +1,15 @@
-import { GuestList } from "./guests.js"
-import { ParkAreas } from "./parkAreas.js"
+import { Footer } from "./footer.js"
+import { Header } from "./header.js"
+import { Middle } from "./middle.js"
+
+
+
+const container = document.querySelector('#container')
+container.innerHTML = `
+${Header()}
+${Middle()}
+${Footer()}
+`
 /* 
 What are the main resources ?
 
@@ -72,7 +82,7 @@ What should each function return?
 
 What is the specific algorithm for each function? Does it need parameters? Should it return something?
 
- */
+*/
 
 /* 
 header and footer modules
@@ -94,13 +104,6 @@ functin creates string containing 'footer' 'p' 'phone number' '/p' 'p' 'email ad
 6. footer.js
 */
 
-const container = document.querySelector('#container')
-
-container.innerHTML = `
-${ParkAreas()}
-<h1>Guests In Park</h1>
-${GuestList()}
-`
 
 
 

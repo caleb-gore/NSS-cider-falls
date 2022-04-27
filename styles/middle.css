@@ -1,0 +1,4 @@
+.main-middle {
+    display: flex;
+    justify-content: space-between;
+}

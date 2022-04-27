@@ -88,22 +88,40 @@ what will the park areas module do?
 
  */
 
+// import necessary functions from other modules
 import { getParkAreas, getParkAreaServices, getServices } from "./database.js";
 
-const parkAreas = getParkAreas()
-const services = getServices()
-const parkAreaServices = getParkAreaServices()
+// call necessary functions by assigning them to a variable
+const parkAreas = getParkAreas() // returns an array of park area objects
+const services = getServices() // returns an array of services objects
+const parkAreaServices = getParkAreaServices() // returns an array of park area service matching objects
 
+// function takes park areas, services, and parkAreaServices as parameters
+// defines an empty array
+// iterates through the parkAreaServices array
+// if the park area id matches the park area services parkarea id, then the empty array will now become an array of all services associated with that park area.
+// function returns the array
 const pairedServicesArray = (area, servicesArray, indexArray) => {
     let arrayOfServices = []
     for (const index of indexArray) {
         if (area.id === index.parkAreaId) {
-            arrayOfServices = servicesArray.filter(service => service.id === index.serviceId)
+            for (const service of servicesArray) {
+                if (service.id === index.serviceId) {
+                    arrayOfServices.push(service)
+                }
+            }
+            // arrayOfServices = servicesArray.filter(service => service.id === index.serviceId)
         }
     }
     return arrayOfServices
 }
 
+// function creates HTML element that contains the list of services names associated with a give park area
+// funciton takes the returned array from the previous function as a parameter
+// defines an html string starting with an opening ul tag
+// for each service in the services array, add a list item to that ul that contains the name of that service
+// after cycling through all servies, add a closing ul tag
+// return the html string
 const serviceNames = (servicesArray) => {
     let html = "<ul>"
     for (const service of servicesArray) {
@@ -113,15 +131,19 @@ const serviceNames = (servicesArray) => {
     return html
 }
 
+// ecported function creates the html to be pushed to the DOM
+// defines an html string that starts with an opening section tag
+// for each park area, the string adds an h1 element containing the park area name
+// the html element adds the result of running the paired services array and the services names array
+// the html element adds the closing section tag and returns the html section
 export const ParkAreas = () => {
-    let html = `<section>`
+    let html = `<section class="middle-areas">`
     for (const area of parkAreas) {
-        html += `<h1>${area.name}</h1>
+        html += `<div class="areas-card"><h1>${area.name}</h1>
         ${serviceNames(pairedServicesArray(area, services, parkAreaServices))}
-        </section><section>`
+        </div>`
     }
     html += `</section>`
     return html
 }
 
-// ************************************ service names only displaying one service ********************************************

@@ -1,0 +1,16 @@
+.middle-areas {
+    display: flex;
+    flex-direction: row;
+    /* background-color: aqua; */
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: 3;
+}
+
+.areas-card {
+    flex-basis: 25%;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

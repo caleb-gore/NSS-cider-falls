@@ -1,0 +1,9 @@
+@import "./header.css";
+@import "./middle.css";
+@import "./guests.css";
+@import "./parkAreas.css";
+@import "./footer.css";
+
+* {
+    border: 1px dotted goldenrod;
+}

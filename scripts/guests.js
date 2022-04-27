@@ -46,10 +46,10 @@ import { getGuests } from "./database.js";
 const guests = getGuests()
 
 export const GuestList= () => {
-    let html = '<ul>'
+    let html = '<section class="middle-guests"><h1>Guests In Park</h1><ul>'
     for (const guest of guests) {
         html += `<li>${guest.firstName} ${guest.lastName}</li>`
     }
-    html += '</ul>'
+    html += '</ul></section>'
     return html
 }

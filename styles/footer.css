@@ -1,0 +1,9 @@
+.footer-content {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.footer-content li {
+    margin: auto 4em;
+}
