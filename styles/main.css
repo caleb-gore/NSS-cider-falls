@@ -3,9 +3,10 @@
 @import "./guests.css";
 @import "./parkAreas.css";
 @import "./footer.css";
+@import "./services.css";
 
 * {
-    border: 1px dotted goldenrod;
+    /* border: 1px dotted goldenrod; */
 }
 
 .container {

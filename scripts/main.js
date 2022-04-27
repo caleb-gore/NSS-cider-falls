@@ -1,12 +1,13 @@
 import { Footer } from "./footer.js"
 import { Header } from "./header.js"
 import { Middle } from "./middle.js"
-
+import { Services } from "./services.js"
 
 
 const container = document.querySelector('#container')
 container.innerHTML = `
 ${Header()}
+${Services()}
 ${Middle()}
 ${Footer()}
 `
