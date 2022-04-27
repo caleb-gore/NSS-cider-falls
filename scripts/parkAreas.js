@@ -89,13 +89,13 @@ what will the park areas module do?
  */
 
 // import necessary functions from other modules
-import { getParkAreas, getParkAreaServices, getServices } from "./database.js";
+import { getGuests, getParkAreas, getParkAreaServices, getServices } from "./database.js";
 
 // call necessary functions by assigning them to a variable
 const parkAreas = getParkAreas() // returns an array of park area objects
 const services = getServices() // returns an array of services objects
 const parkAreaServices = getParkAreaServices() // returns an array of park area service matching objects
-
+const guests = getGuests()
 // function takes park areas, services, and parkAreaServices as parameters
 // defines an empty array
 // iterates through the parkAreaServices array
@@ -139,7 +139,7 @@ const serviceNames = (servicesArray) => {
 export const ParkAreas = () => {
     let html = `<section class="middle-areas">`
     for (const area of parkAreas) {
-        html += `<div class="areas-card"><h1>${area.name}</h1>
+        html += `<div class="areas-card"><h1 id="parkArea--${area.id}">${area.name}</h1>
         ${serviceNames(pairedServicesArray(area, services, parkAreaServices))}
         </div>`
     }
@@ -147,3 +147,45 @@ export const ParkAreas = () => {
     return html
 }
 
+
+// function to make array of guests that are in any given section of the park
+// use park area as the parameter
+// define the function
+// define a variable and assign it an empty array
+// iterate through the guests
+// if the guests' park area id property matches the id property of the park area, push that guest into the new array
+// return the new array
+
+// function to add event listener
+// define item clicked variable and assign the target of the click
+// if the target of the click has an id that starts with park area, split that id into a new variable that is only the id number
+// iterate through the park areas
+// if the park area id matches the parsed integer of the clicked item, create a window alert that says 
+// "There are N guests in the this area"  while using the previous function to populate the number for N
+
+const guestsInArea = (parkSection) => {
+    let guestsArray = []
+    for (const guest of guests) {
+        if (guest.parkAreaId === parkSection.id) {
+            guestsArray.push(guest)
+        }
+    }
+    return guestsArray.length
+}
+
+document.addEventListener("click", (clickEvent) => {
+    const itemClicked = clickEvent.target
+    if (itemClicked.id.startsWith("parkArea")) {
+        const [, parkAreaId] = itemClicked.id.split("--")
+
+        for (const area of parkAreas) {
+            const numOfGuests = guestsInArea(area)
+            if (area.id === parseInt(parkAreaId) && numOfGuests !== 1) {
+                window.alert(`There are ${numOfGuests} guests in this area`)
+            } else if (area.id === parseInt(parkAreaId)) {
+                window.alert(`There is ${numOfGuests} guest in this area`)
+
+            }
+        }
+    }
+})

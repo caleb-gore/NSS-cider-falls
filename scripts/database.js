@@ -77,52 +77,62 @@ const database = {
         {
             id: 1,
             firstName: 'Al',
-            lastName: 'Sheridan'
+            lastName: 'Sheridan',
+            parkAreaId: 4
         },
         {
             id: 2,
             firstName: 'Reggie',
-            lastName: 'Petra'
+            lastName: 'Petra',
+            parkAreaId: 3
         },
         {
             id: 3,
             firstName: 'Trudi',
-            lastName: 'Ruby'
+            lastName: 'Ruby',
+            parkAreaId: 2
         },
         {
             id: 4,
             firstName: 'Quinten',
-            lastName: 'Braylen'
+            lastName: 'Braylen',
+            parkAreaId: 1
         },
         {
             id: 5,
             firstName: 'Stafford',
-            lastName: 'Charnette'
+            lastName: 'Charnette',
+            parkAreaId: 6
         },
         {
             id: 6,
             firstName: 'Rafferty',
-            lastName: 'Alberta'
+            lastName: 'Alberta',
+            parkAreaId: 5
         },
         {
             id: 7,
             firstName: 'Lark',
-            lastName: 'Kassidy'
+            lastName: 'Kassidy',
+            parkAreaId: 4
         },
         {
             id: 8,
             firstName: 'Kerry',
-            lastName: 'Laurena'
+            lastName: 'Laurena',
+            parkAreaId: 3
         },
         {
             id: 9,
             firstName: 'Hunter',
-            lastName: 'Gareth'
+            lastName: 'Gareth',
+            parkAreaId: 2
         },
         {
             id: 10,
             firstName: 'Isebella',
-            lastName: 'Shevaun'
+            lastName: 'Shevaun',
+            parkAreaId: 1
         }
     ],
     parkAreaServices: [
