@@ -1,7 +1,7 @@
 # Cider Falls Park Webside
 ## To Open
 
-1. from your workspace directory, past the command below into your terminal
+1. from your workspace directory, paste the command below into your terminal
 
 ``` 
 git clone git@github.com:caleb-gore/NSS-cider-falls.git
