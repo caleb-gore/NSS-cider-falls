@@ -45,11 +45,10 @@ const areasPerService = (service, parkAreasArray, indexArray) => {
 const areaNames = (areasArray) => {
     let html = ""
     for (const area of areasArray) {
-        console.log(areasArray.indexOf(area))
-        if (areasArray.indexOf(area) === areasArray[areasArray.length - 1] && areasArray.length > 1) {
-            html += `and ${area.name}.`
-        } else if (areasArray.indexOf(area) === areasArray[areasArray.length - 1] && areasArray.length === 1 ) {
+        if (areasArray.indexOf(area) === areasArray.length - 1) {
             html += `${area.name}.`
+        } else if (areasArray.indexOf(area) === areasArray.length -2) {
+            html += `${area.name} and `
         } else {
             html += `${area.name}, `
         }
